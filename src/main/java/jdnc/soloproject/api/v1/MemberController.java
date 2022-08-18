@@ -2,6 +2,7 @@ package jdnc.soloproject.api.v1;
 
 import jdnc.soloproject.api.v1.dto.MemberPostDto;
 import jdnc.soloproject.api.v1.dto.MemberResponseDto;
+import jdnc.soloproject.api.v1.dto.SingleResponseDto;
 import jdnc.soloproject.api.v1.mapper.MemberMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +32,7 @@ public class MemberController {
         // (3)
         Member response = memberService.createMember(member);
 
-        return new ResponseEntity<>(mapper.memberToMemberResponseDto(response), HttpStatus.CREATED);
+        return new ResponseEntity<>(new SingleResponseDto<>(mapper.memberToMemberResponseDto(response)), HttpStatus.CREATED);
     }
 
         @GetMapping("/{member-id}")

@@ -1,5 +1,9 @@
 package jdnc.soloproject.api.v1.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
 public class MemberPostDto {
     private String email;
     private String name;
